@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Contact</title>
+    <meta name="description" content="Get in touch with a Data Science and Mathematics graduate for collaborations, opportunities, and inquiries.">
+    <meta name="keywords" content="Contact, Data Science, Mathematics, Portfolio">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Portfolio - Contact">
+    <meta property="og:description" content="Get in touch with a Data Science and Mathematics graduate for collaborations, opportunities, and inquiries.">
+    <meta property="og:image" content="assets/images/contact-og.png">
+    <meta property="og:url" content="https://yourusername.github.io/PortfolioWebsite/contact.html">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">YourLogo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Form -->
+    <section class="contact-section container my-5">
+        <h2>Contact Me</h2>
+        <form id="contactForm" class="mt-4">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control hacker-font" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control hacker-font" id="email" placeholder="your.email@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control hacker-font" id="message" rows="5" placeholder="Your message here..." required></textarea>
+            </div>
+            <!-- Google reCAPTCHA v2 -->
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Social Links -->
+    <section class="social-links-section container my-5 text-center">
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">
+            <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="mailto:your.email@example.com">
+            <img src="assets/icons/email.svg" alt="Email" class="social-icon">
+        </a>
+        <a href="https://github.com/yourusername" target="_blank">
+            <img src="assets/icons/github.svg" alt="GitHub" class="social-icon">
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-4">
+        &copy; 2024 Your Name. All Rights Reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+            integrity="sha384-DfXdqLmgXMF3zS6g6Vkn6O3aYfnjb5vA3m4OTkJ1+S0eZV43nPc1y4PZBB76bAJe" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-LtrjvnR4GeARYZrO3UySgLhdXnfxHP+3lD3VbLhK6lO+n4I6Y5ZC8qbiusOhBo0s" 
+            crossorigin="anonymous"></script>
+    <script>
+        // Example JavaScript for handling form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Implement form submission logic here (e.g., using Formspree or another service)
+            alert('Thank you for your message!');
+            this.reset();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Skillbanc AI Tutor",
+        "description": "Adaptive learning pipeline for students, personalized recommendations, and feedback system.",
+        "image": "assets/images/ai-tutor.png",
+        "skills": ["Python", "AI Model Development", "Flutter"],
+        "link": "projects.html#skillbanc-ai-tutor"
+    },
+    {
+        "title": "Smart Helmet Prototype",
+        "description": "Developed a wearable to analyze punch force and location for boxing performance.",
+        "image": "assets/images/smart-helmet.png",
+        "skills": ["Sensor Integration", "BLE Data Transmission"],
+        "link": "projects.html#smart-helmet-prototype"
+    },
+    {
+        "title": "ML & Sovereign Credit Ratings",
+        "description": "Developed predictive models for forecasting credit ratings.",
+        "image": "assets/images/credit-ratings.png",
+        "skills": ["Financial Modeling", "AI", "Statistical Analysis"],
+        "link": "projects.html#ml-sovereign-credit-ratings"
+    }
+]

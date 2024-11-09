@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Skills</title>
+    <meta name="description" content="Interactive skill matrix showcasing expertise in Python, SQL, Azure, and more.">
+    <meta name="keywords" content="Skills, Data Science, Programming, Portfolio">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Portfolio - Skills">
+    <meta property="og:description" content="Interactive skill matrix showcasing expertise in Python, SQL, Azure, and more.">
+    <meta property="og:image" content="assets/images/skills-og.png">
+    <meta property="og:url" content="https://yourusername.github.io/PortfolioWebsite/skills.html">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">YourLogo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="skills.html">Skills</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Skills Matrix -->
+    <section class="skills-section container my-5">
+        <h2>Skills</h2>
+        <div class="skill-matrix d-flex justify-content-center align-items-center">
+            <!-- Example Skill Icons with Network Lines -->
+            <div class="skill-item" data-toggle="tooltip" data-placement="top" title="Python">
+                <img src="assets/icons/python.svg" alt="Python" class="skill-icon">
+            </div>
+            <div class="skill-item" data-toggle="tooltip" data-placement="top" title="SQL">
+                <img src="assets/icons/sql.svg" alt="SQL" class="skill-icon">
+            </div>
+            <div class="skill-item" data-toggle="tooltip" data-placement="top" title="Azure">
+                <img src="assets/icons/azure.svg" alt="Azure" class="skill-icon">
+            </div>
+            <!-- Add more skills as needed -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-4">
+        &copy; 2024 Your Name. All Rights Reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+            integrity="sha384-DfXdqLmgXMF3zS6g6Vkn6O3aYfnjb5vA3m4OTkJ1+S0eZV43nPc1y4PZBB76bAJe" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-LtrjvnR4GeARYZrO3UySgLhdXnfxHP+3lD3VbLhK6lO+n4I6Y5ZC8qbiusOhBo0s" 
+            crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
