@@ -1,3 +1,4 @@
+<!-- skills.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
     <meta name="keywords" content="Skills, Data Science, Programming, Portfolio">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Portfolio - Skills">
     <meta property="og:description" content="Interactive skill matrix showcasing expertise in Python, SQL, Azure, and more.">
@@ -70,26 +71,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-LtrjvnR4GeARYZrO3UySgLhdXnfxHP+3lD3VbLhK6lO+n4I6Y5ZC8qbiusOhBo0s" 
             crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
     <script>
-        // Fetch and display skills
-        fetch('data/skills.json')
-            .then(response => response.json())
-            .then(data => {
-                const skillsContainer = document.getElementById('skills-container');
-                data.forEach(skill => {
-                    const skillItem = `
-                        <div class="col-md-3 col-sm-4 col-6 mb-4 text-center">
-                            <a href="${skill.projects.length > 0 ? skill.projects.map(project => 'projects.html#' + project.toLowerCase().replace(/\s+/g, '-')).join(', ') : '#'}" class="skill-link" aria-label="${skill.name}">
-                                <img src="${skill.icon}" alt="${skill.name}" class="skill-icon mb-2">
-                                <p>${skill.name}</p>
-                            </a>
-                        </div>
-                    `;
-                    skillsContainer.insertAdjacentHTML('beforeend', skillItem);
-                });
-            })
-            .catch(error => console.error('Error loading skills:', error));
+        // Initialize Skills
+        renderSkills();
     </script>
 </body>
 </html>

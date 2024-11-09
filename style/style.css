@@ -1,3 +1,5 @@
+/* style/style.css */
+
 /* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
@@ -34,65 +36,44 @@ body.bright-mode .btn-outline-light:hover {
     color: #ffffff;
 }
 
-/* Hacker-style Font */
-.hacker-font {
-    font-family: 'Fira Code', monospace;
-    background-color: #1e1e1e;
-    color: #00ff00;
-    border: 1px solid #00ff00;
-    transition: background-color 0.3s, color 0.3s;
+/* Ensuring text and elements adapt to light mode */
+body.bright-mode .timeline-item h3,
+body.bright-mode .timeline-item p,
+body.bright-mode .timeline-item button,
+body.bright-mode .project-card,
+body.bright-mode .blog-card,
+body.bright-mode .project-detail-section p,
+body.bright-mode .blog-detail-section p,
+body.bright-mode .skills-section h2,
+body.bright-mode .projects-section h2,
+body.bright-mode .blog-section h2,
+body.bright-mode .contact-section h2,
+body.bright-mode .featured-projects-section h2,
+body.bright-mode .latest-blogs-section h2 {
+    color: #121212;
 }
 
-.hacker-font:focus {
-    background-color: #333333;
-    color: #00ff00;
+body.bright-mode .project-card {
+    background-color: #ffffff;
+    border-color: #00aaff;
 }
 
-/* Navbar Styles */
-.navbar-brand {
-    font-family: 'Fira Code', monospace;
-    font-size: 1.5rem;
-    color: #00ff00 !important;
-    transition: color 0.3s;
+body.bright-mode .blog-card {
+    background-color: #ffffff;
+    border-color: #00aaff;
 }
 
-body.bright-mode .navbar-brand {
-    color: #121212 !important;
+body.bright-mode .btn-primary {
+    background-color: #00aaff;
+    border-color: #00aaff;
 }
 
-.nav-link {
-    color: #e0e0e0 !important;
-    transition: color 0.3s;
+body.bright-mode .btn-primary:hover {
+    background-color: #0088cc;
+    border-color: #0088cc;
 }
 
-body.bright-mode .nav-link {
-    color: #121212 !important;
-}
-
-.nav-link:hover {
-    color: #00ff00 !important;
-}
-
-body.bright-mode .nav-link:hover {
-    color: #00aaff !important;
-}
-
-/* Home Page Styles */
-.home-header {
-    height: 100vh;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.home-header .content {
-    max-width: 800px;
-}
-
+/* Typewriter Effect */
 .name {
     font-family: 'Fira Code', monospace;
     font-size: 4rem;
@@ -102,6 +83,11 @@ body.bright-mode .nav-link:hover {
     border-right: 0.15em solid #00ff00;
     width: 0;
     animation: typewriter 4s steps(40) 1s forwards, blinkCaret 0.75s step-end infinite;
+}
+
+body.bright-mode .name {
+    color: #00aaff;
+    border-right: 0.15em solid #00aaff;
 }
 
 @keyframes typewriter {
@@ -114,6 +100,10 @@ body.bright-mode .nav-link:hover {
     50% { border-color: #00ff00; }
 }
 
+body.bright-mode .blinkCaret {
+    border-color: #00aaff;
+}
+
 .tagline {
     font-size: 1.5rem;
     margin-top: 20px;
@@ -121,11 +111,19 @@ body.bright-mode .nav-link:hover {
     animation: fadeIn 2s 5s forwards;
 }
 
+body.bright-mode .tagline {
+    color: #121212;
+}
+
 .summary {
     margin-top: 20px;
     font-size: 1.2rem;
     opacity: 0;
     animation: fadeIn 2s 7s forwards;
+}
+
+body.bright-mode .summary {
+    color: #121212;
 }
 
 @keyframes fadeIn {
@@ -144,9 +142,17 @@ body.bright-mode .nav-link:hover {
     transition: transform 0.3s, filter 0.3s;
 }
 
+body.bright-mode .social-links img {
+    filter: none;
+}
+
 .social-links img:hover {
     transform: scale(1.2);
     filter: brightness(0) saturate(100%) invert(39%) sepia(95%) saturate(413%) hue-rotate(117deg) brightness(95%) contrast(105%);
+}
+
+body.bright-mode .social-links img:hover {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(300%) hue-rotate(200deg) brightness(95%) contrast(105%);
 }
 
 /* Footer Styles */
@@ -178,6 +184,11 @@ body.bright-mode footer {
     transition: transform 0.3s;
 }
 
+body.bright-mode .project-card {
+    background-color: #ffffff;
+    border-color: #00aaff;
+}
+
 .project-card:hover {
     transform: scale(1.05);
 }
@@ -199,6 +210,11 @@ body.bright-mode footer {
     transition: transform 0.3s;
 }
 
+body.bright-mode .blog-card {
+    background-color: #ffffff;
+    border-color: #00aaff;
+}
+
 .blog-card:hover {
     transform: scale(1.05);
 }
@@ -213,8 +229,16 @@ body.bright-mode footer {
     border: none;
 }
 
+body.bright-mode .blog-card .btn {
+    background-color: #00aaff;
+}
+
 .blog-card .btn:hover {
     background-color: #00cc00;
+}
+
+body.bright-mode .blog-card .btn:hover {
+    background-color: #0088cc;
 }
 
 /* Project Detail Page Styles */
@@ -227,6 +251,51 @@ body.bright-mode footer {
 .blog-detail-section img {
     max-width: 100%;
     height: auto;
+}
+
+/* Skills Page Styles */
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.skill-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(0) saturate(100%) invert(39%) sepia(95%) saturate(413%) hue-rotate(117deg) brightness(95%) contrast(105%);
+}
+
+/* Scroll To Top Button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    z-index: 1000;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #00ff00;
+    color: #fff;
+}
+
+/* Buttons Hover Effect */
+.btn-primary, .btn-secondary {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Active Navigation Link */
+.nav-item.active .nav-link {
+    font-weight: bold;
+    color: #00ff00 !important;
 }
 
 /* Responsive Adjustments */
@@ -242,4 +311,15 @@ body.bright-mode footer {
     .summary {
         font-size: 1rem;
     }
+}
+
+/* Featured Projects and Latest Blogs */
+.featured-projects-section, .latest-blogs-section {
+    /* You can add specific styles if needed */
+}
+
+/* Ensure all images do not overflow their containers */
+img {
+    max-width: 100%;
+    height: auto;
 }

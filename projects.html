@@ -1,3 +1,4 @@
+<!-- projects.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
     <meta name="keywords" content="Projects, AI, Machine Learning, Data Science, Portfolio">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Portfolio - Projects">
     <meta property="og:description" content="Explore projects in AI Tutor Development, Smart Helmet Prototype, and Machine Learning for Sovereign Credit Ratings.">
@@ -70,33 +71,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-LtrjvnR4GeARYZrO3UySgLhdXnfxHP+3lD3VbLhK6lO+n4I6Y5ZC8qbiusOhBo0s" 
             crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
     <script>
-        // Fetch and display projects
-        fetch('data/projects.json')
-            .then(response => response.json())
-            .then(data => {
-                const projectsContainer = document.getElementById('projects-container');
-                data.forEach(project => {
-                    const projectCard = `
-                        <div class="col-md-4 mb-4">
-                            <div class="card project-card">
-                                <img src="${project.image}" class="card-img-top" alt="${project.title}">
-                                <div class="card-body">
-                                    <h5 class="card-title">${project.title}</h5>
-                                    <p class="card-text">${project.description}</p>
-                                    <div class="skills mb-3">
-                                        ${project.skills.map(skill => `<span class="badge badge-primary mr-1">${skill}</span>`).join('')}
-                                    </div>
-                                    <a href="${project.link}" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    projectsContainer.insertAdjacentHTML('beforeend', projectCard);
-                });
-            })
-            .catch(error => console.error('Error loading projects:', error));
+        // Initialize Projects
+        renderProjects();
     </script>
 </body>
 </html>
