@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Home</title>
-    <meta name="description" content="Dynamic Data Science and Mathematics graduate portfolio showcasing AI, Deep Learning, and Data-Driven Solutions.">
-    <meta name="keywords" content="Data Science, Mathematics, AI, Deep Learning, Portfolio">
+    <meta name="description" content="Welcome to my portfolio website showcasing projects, skills, and experience.">
+    <meta name="keywords" content="Portfolio, Projects, Skills, Experience, Data Science, AI">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
-    <!-- Open Graph Meta Tags for SEO and Social Sharing -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Portfolio - Home">
-    <meta property="og:description" content="Dynamic Data Science and Mathematics graduate portfolio showcasing AI, Deep Learning, and Data-Driven Solutions.">
+    <meta property="og:description" content="Welcome to my portfolio website showcasing projects, skills, and experience.">
     <meta property="og:image" content="assets/images/logo.png">
-    <meta property="og:url" content="https://tatasatyapratheek.github.io/PortfolioWebsite/">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://tatasatyapratheek.github.io/PortfolioWebsite/index.html">
 </head>
 <body>
     <!-- Header -->
@@ -63,46 +62,33 @@
     <!-- Particle Background -->
     <canvas id="background-animation"></canvas>
 
-    <!-- Main Content -->
-    <header class="home-header d-flex align-items-center justify-content-center text-center">
-        <div class="content">
+    <!-- Home Section -->
+    <section class="home-section container my-5">
+        <div class="text-center">
             <h1 class="name"></h1>
-            <p class="tagline">Exploring the Intersection of Pure Math and Machine Intelligence</p>
-            <p class="summary">Dynamic Data Science and Mathematics graduate with a strong focus on econometrics, AI, and data-driven business solutions.</p>
-            <div class="social-links mt-4">
-                <a href="https://linkedin.com/in/satyapratheek-tata" target="_blank" aria-label="LinkedIn">
-                    <img src="assets/icons/linkedin.svg" alt="LinkedIn">
-                </a>
-                <a href="mailto:satyapratheek.tata@edhec.com" aria-label="Email">
-                    <img src="assets/icons/gmail.svg" alt="Email">
-                </a>
-                <a href="https://github.com/TataSatyaPratheek" target="_blank" aria-label="GitHub">
-                    <img src="assets/icons/github.svg" alt="GitHub">
-                </a>
+            <p class="tagline">Data Scientist | Software Engineer | AI Enthusiast</p>
+            <p class="summary">Welcome to my portfolio! Explore my projects, skills, and experience.</p>
+        </div>
+
+        <!-- Featured Projects -->
+        <section class="featured-projects-section my-5">
+            <h2>Featured Projects</h2>
+            <div id="featured-projects-container" class="row">
+                <!-- Project cards will be injected here by JavaScript -->
             </div>
-        </div>
-    </header>
+        </section>
 
-    <!-- Featured Projects Section -->
-    <section class="featured-projects-section container my-5">
-        <h2>Featured Projects</h2>
-        <div id="featured-projects-container" class="row">
-            <!-- Featured project cards will be injected here by JavaScript -->
-        </div>
-    </section>
-
-    <!-- Latest Blogs Section -->
-    <section class="latest-blogs-section container my-5">
-        <h2>Latest Blogs</h2>
-        <div id="latest-blogs-container" class="row">
-            <!-- Latest blog post cards will be injected here by JavaScript -->
-        </div>
+        <!-- Latest Blogs -->
+        <section class="latest-blogs-section my-5">
+            <h2>Latest Blogs</h2>
+            <div id="latest-blogs-container" class="row">
+                <!-- Blog cards will be injected here by JavaScript -->
+            </div>
+        </section>
     </section>
 
     <!-- Scroll To Top Button -->
-    <button id="scrollToTopBtn" class="btn btn-primary" aria-label="Scroll to Top">
-        ↑
-    </button>
+    <button id="scrollToTopBtn" class="btn btn-primary" aria-label="Scroll to Top">↑</button>
 
     <!-- Footer -->
     <footer class="bg-dark text-center text-white py-4">
@@ -117,10 +103,5 @@
             integrity="sha384-LtrjvnR4GeARYZrO3UySgLhdXnfxHP+3lD3VbLhK6lO+n4I6Y5ZC8qbiusOhBo0s" 
             crossorigin="anonymous"></script>
     <script src="scripts/script.js"></script>
-    <script>
-        // Initialize Featured Projects and Latest Blogs
-        renderFeaturedProjects();
-        renderLatestBlogs();
-    </script>
 </body>
 </html>

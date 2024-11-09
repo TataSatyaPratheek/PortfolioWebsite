@@ -1,7 +1,7 @@
 [
     {
         "title": "Skillbanc AI Tutor",
-        "image": "assets/images/ai-tutor.png",
+        "image": "assets/images/ai-tutor.webp",
         "description": "An adaptive learning pipeline for students with personalized recommendations and real-time feedback, leveraging machine learning to optimize learning paths.",
         "skills": ["Python", "AI Model Development", "Flutter"],
         "link": "project-detail.html#skillbanc-ai-tutor",

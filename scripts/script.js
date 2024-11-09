@@ -461,7 +461,9 @@ document.addEventListener('DOMContentLoaded', function() {
     switch(currentPage) {
         case 'index.html':
         case '':
-            // Already handled by initial calls in HTML
+            // Call functions to render content specific to the index page
+            renderFeaturedProjects();
+            renderLatestBlogs();
             break;
         case 'projects.html':
             renderProjects();

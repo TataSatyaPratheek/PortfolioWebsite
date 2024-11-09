@@ -2,7 +2,7 @@
     {
         "title": "The Intersection of AI and Theoretical Physics",
         "description": "Exploring how principles from theoretical physics can be applied to enhance AI model structures and efficiency.",
-        "image": "assets/images/ai-physics.png",
+        "image": "assets/images/ai-physics.jpeg",
         "link": "blog-detail.html?title=the-intersection-of-ai-and-theoretical-physics",
         "tags": ["AI", "Physics", "Deep Learning"],
         "content": "During my studies at NISER, I worked on a physics-based model to improve neural network performance using the Schwinger-Dyson formalism. This approach allowed for more robust and efficient AI models by incorporating principles from theoretical physics...",
