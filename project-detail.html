@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Skillbanc AI Tutor</title>
-    <meta name="description" content="Detailed information about the Skillbanc AI Tutor project.">
-    <meta name="keywords" content="Skillbanc AI Tutor, AI, Machine Learning, Data Science, Portfolio">
+    <title>Portfolio - Project Detail</title>
+    <meta name="description" content="Detailed project information.">
+    <meta name="keywords" content="Project, AI, Data Science, Portfolio">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Portfolio - Skillbanc AI Tutor">
-    <meta property="og:description" content="Detailed information about the Skillbanc AI Tutor project.">
-    <meta property="og:image" content="assets/images/ai-tutor.png">
-    <meta property="og:url" content="https://yourusername.github.io/PortfolioWebsite/project-skillbanc-ai-tutor.html">
+    <meta property="og:title" content="Portfolio - Project Detail">
+    <meta property="og:description" content="Detailed project information.">
+    <meta property="og:image" content="assets/images/projects-og.png">
+    <meta property="og:url" content="https://yourusername.github.io/PortfolioWebsite/project-detail.html">
 </head>
 <body>
     <!-- Header -->
@@ -31,7 +31,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="projects.html">Projects</a>
                 </li>
                 <li class="nav-item">
@@ -52,20 +52,19 @@
 
     <!-- Project Detail Section -->
     <section class="project-detail-section container my-5">
-        <h2>Skillbanc AI Tutor</h2>
-        <img src="assets/images/ai-tutor.png" alt="Skillbanc AI Tutor" class="img-fluid mb-4">
-        <p><strong>Description:</strong> An adaptive learning pipeline for students with personalized recommendations and real-time feedback, leveraging machine learning to optimize learning paths.</p>
-        <p><strong>Skills:</strong> Python, AI Model Development, Flutter</p>
+        <h2 id="project-title">Project Title</h2>
+        <img id="project-image" src="" alt="Project Image" class="img-fluid mb-4">
+        <p><strong>Description:</strong> <span id="project-description"></span></p>
+        <p><strong>Skills:</strong> <span id="project-skills"></span></p>
         <h4>Project Details</h4>
-        <p>Built on Python and Flutter, this project enhanced student retention and learning outcomes through adaptive learning strategies. By analyzing user interactions and performance metrics, the AI Tutor system provides personalized recommendations and feedback, creating a tailored learning experience for each student.</p>
+        <p id="project-details"></p>
         <h4>Citations:</h4>
-        <ul>
-            <li>Skillbanc.com Internship</li>
-            <li>User Behavior Analysis</li>
+        <ul id="project-citations">
+            <!-- Citations will be injected here by JavaScript -->
         </ul>
         <h4>Related Projects:</h4>
-        <ul>
-            <li><a href="project-ml-credit-ratings.html">Machine Learning and Sovereign Credit Ratings</a></li>
+        <ul id="project-related-projects">
+            <!-- Related projects will be injected here by JavaScript -->
         </ul>
         <a href="projects.html" class="btn btn-primary mt-3">Back to Projects</a>
     </section>
@@ -83,5 +82,9 @@
             integrity="sha384-LtrjvnR4GeARYZrO3UySgLhdXnfxHP+3lD3VbLhK6lO+n4I6Y5ZC8qbiusOhBo0s" 
             crossorigin="anonymous"></script>
     <script src="scripts/script.js"></script>
+    <script>
+        // Initialize Project Detail
+        renderProjectDetail();
+    </script>
 </body>
 </html>

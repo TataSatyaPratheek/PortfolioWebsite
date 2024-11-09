@@ -4,55 +4,44 @@
         "image": "assets/images/ai-tutor.png",
         "description": "An adaptive learning pipeline for students with personalized recommendations and real-time feedback, leveraging machine learning to optimize learning paths.",
         "skills": ["Python", "AI Model Development", "Flutter"],
-        "link": "project-skillbanc-ai-tutor.html",
+        "link": "project-detail.html#skillbanc-ai-tutor",
         "featured": true,
         "details": [
             {
                 "text": "Built on Python and Flutter, this project enhanced student retention and learning outcomes through adaptive learning strategies.",
                 "citations": ["Skillbanc.com Internship", "User Behavior Analysis"]
             }
-        ]
+        ],
+        "related_projects": ["Machine Learning and Sovereign Credit Ratings"]
     },
     {
         "title": "Smart Helmet Prototype",
         "image": "assets/images/smart-helmet.png",
         "description": "Developed a wearable device to monitor and visualize athletic performance, specifically focusing on boxing punch analysis.",
         "skills": ["Sensor Integration", "BLE Data Transmission", "Data Visualization"],
-        "link": "project-smart-helmet-prototype.html",
+        "link": "project-detail.html#smart-helmet-prototype",
         "featured": true,
         "details": [
             {
                 "text": "Sensor integration and BLE were leveraged for real-time metrics, providing enhanced safety data during training.",
                 "citations": ["Skillbanc.com Internship"]
             }
-        ]
+        ],
+        "related_projects": []
     },
     {
         "title": "Machine Learning and Sovereign Credit Ratings",
         "image": "assets/images/credit-ratings.png",
         "description": "Using machine learning models to forecast credit ratings, integrating economic and political factors to influence financial decisions.",
         "skills": ["Financial Modeling", "AI", "Statistical Analysis"],
-        "link": "project-ml-credit-ratings.html",
+        "link": "project-detail.html#machine-learning-and-sovereign-credit-ratings",
         "featured": false,
         "details": [
             {
                 "text": "Enhanced global credit rating predictions by integrating long-term financial data.",
                 "citations": ["EDHEC MSc Thesis"]
             }
-        ]
-    },
-    {
-        "title": "New Project Title",
-        "image": "assets/images/new-project.png",
-        "description": "A brief description of the new project.",
-        "skills": ["Skill1", "Skill2"],
-        "link": "project-new-project.html",
-        "featured": false,
-        "details": [
-            {
-                "text": "Provide a brief overview of the new project.",
-                "citations": ["Source if any"]
-            }
-        ]
+        ],
+        "related_projects": []
     }
 ]

@@ -135,23 +135,27 @@ body.bright-mode .summary {
     margin: 0 10px;
 }
 
-.social-links img {
+.social-links img,
+.contact-logo {
     width: 40px;
     height: 40px;
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(100%) contrast(101%);
     transition: transform 0.3s, filter 0.3s;
 }
 
-body.bright-mode .social-links img {
+body.bright-mode .social-links img,
+body.bright-mode .contact-logo {
     filter: none;
 }
 
-.social-links img:hover {
+.social-links img:hover,
+.contact-logo:hover {
     transform: scale(1.2);
     filter: brightness(0) saturate(100%) invert(39%) sepia(95%) saturate(413%) hue-rotate(117deg) brightness(95%) contrast(105%);
 }
 
-body.bright-mode .social-links img:hover {
+body.bright-mode .social-links img:hover,
+body.bright-mode .contact-logo:hover {
     filter: brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(300%) hue-rotate(200deg) brightness(95%) contrast(105%);
 }
 
@@ -310,6 +314,16 @@ body.bright-mode .blog-card .btn:hover {
 
     .summary {
         font-size: 1rem;
+    }
+
+    .skill-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-logo {
+        width: 40px;
+        height: 40px;
     }
 }
 

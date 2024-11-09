@@ -1,12 +1,13 @@
 // scripts/script.js
 
-// Typewriter Effect for Name
+// ==================== Typewriter Effect ====================
+
 document.addEventListener('DOMContentLoaded', function() {
     const nameElement = document.querySelector('.name');
     if (nameElement) {
         const fullName = "Satya Pratheek TATA";
         let index = 0;
-  
+
         function typeWriter() {
             if (index < fullName.length) {
                 nameElement.textContent += fullName.charAt(index);
@@ -14,17 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(typeWriter, 150);
             }
         }
-  
+
         typeWriter();
     }
-  });
-  
-  // Dark/Light Mode Toggle
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
-  
-  if (themeToggleBtn) {
-    // Check for saved user preference, if any, on load of the website
+});
+
+// ==================== Dark/Light Mode Toggle ====================
+
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+if (themeToggleBtn) {
+    // Initialize theme based on localStorage or default to dark
     if (localStorage.getItem('theme') === 'bright') {
         document.body.classList.add('bright-mode');
         themeIcon.textContent = '☀️';
@@ -32,12 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('dark-mode');
         themeIcon.textContent = '🌙';
     }
-  
+
     themeToggleBtn.addEventListener('click', function() {
         document.body.classList.toggle('bright-mode');
         document.body.classList.toggle('dark-mode');
-  
-        // Change the icon
+
+        // Update theme icon and save preference
         if (document.body.classList.contains('bright-mode')) {
             themeIcon.textContent = '☀️';
             localStorage.setItem('theme', 'bright');
@@ -46,26 +48,27 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', 'dark');
         }
     });
-  }
-  
-  // Simple Particle Background Animation
-  const canvas = document.getElementById('background-animation');
-  if (canvas) {
+}
+
+// ==================== Particle Background Animation ====================
+
+const canvas = document.getElementById('background-animation');
+if (canvas) {
     const ctx = canvas.getContext('2d');
     let particlesArray;
-  
+
     // Set canvas size
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-  
+
     // Handle window resize
     window.addEventListener('resize', function() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         init();
     });
-  
-    // Create Particle class
+
+    // Particle class
     class Particle {
         constructor(x, y, directionX, directionY, size, color) {
             this.x = x;
@@ -75,16 +78,16 @@ document.addEventListener('DOMContentLoaded', function() {
             this.size = size;
             this.color = color;
         }
-  
-        // Draw individual particle
+
+        // Draw particle
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
             ctx.fillStyle = this.color;
             ctx.fill();
         }
-  
-        // Update particle position, check boundaries
+
+        // Update particle position
         update() {
             if (this.x > canvas.width || this.x < 0) {
                 this.directionX = -this.directionX;
@@ -97,12 +100,12 @@ document.addEventListener('DOMContentLoaded', function() {
             this.draw();
         }
     }
-  
-    // Create particle array
+
+    // Initialize particles
     function init() {
         particlesArray = [];
         let numberOfParticles = (canvas.height * canvas.width) / 9000;
-  
+
         for (let i = 0; i < numberOfParticles; i++) {
             let size = (Math.random() * 2) + 1;
             let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
@@ -110,26 +113,26 @@ document.addEventListener('DOMContentLoaded', function() {
             let directionX = (Math.random() * 0.4) - 0.2;
             let directionY = (Math.random() * 0.4) - 0.2;
             let color = (document.body.classList.contains('bright-mode')) ? 'rgba(0, 170, 255, 0.7)' : 'rgba(0, 255, 0, 0.7)';
-  
+
             particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
         }
     }
-  
-    // Check particles and update color based on theme
+
+    // Animate particles
     function animate() {
         requestAnimationFrame(animate);
         ctx.clearRect(0, 0, innerWidth, innerHeight);
-  
+
         particlesArray.forEach(particle => {
             particle.update();
         });
     }
-  
-    // Initialize and animate
+
+    // Initialize and start animation
     init();
     animate();
-  
-    // Update particle colors on theme change
+
+    // Observe theme changes to update particle colors
     const observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             if (mutation.attributeName === 'class') {
@@ -139,15 +142,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-  
-    // Observe class changes on body
+
     observer.observe(document.body, { attributes: true });
-  }
-  
-  // Scroll To Top Button Functionality
-  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-  
-  if (scrollToTopBtn) {
+}
+
+// ==================== Scroll To Top Button Functionality ====================
+
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+if (scrollToTopBtn) {
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
             scrollToTopBtn.style.display = 'block';
@@ -155,180 +158,321 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollToTopBtn.style.display = 'none';
         }
     });
-  
+
     scrollToTopBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-  }
-  
-  // ==================== Dynamic Content Rendering Functions ====================
-  
-  // Function to create Project Card HTML
-  function createProjectCard(title, image, description, skills, link) {
-      const skillsBadges = skills.map(skill => `<span class="badge badge-primary mr-1">${skill}</span>`).join('');
-      return `
-          <div class="col-md-4 mb-4">
-              <div class="card project-card">
-                  <img src="${image}" class="card-img-top" alt="${title}">
-                  <div class="card-body">
-                      <h5 class="card-title">${title}</h5>
-                      <p class="card-text">${description}</p>
-                      <div class="skills mb-3">
-                          ${skillsBadges}
-                      </div>
-                      <a href="${link}" class="btn btn-primary">Learn More</a>
-                  </div>
-              </div>
-          </div>
-      `;
-  }
-  
-  // Function to create Blog Card HTML
-  function createBlogCard(title, image, description, link) {
-      return `
-          <div class="col-md-6 mb-4">
-              <div class="card blog-card">
-                  <img src="${image}" class="card-img-top" alt="${title}">
-                  <div class="card-body">
-                      <h5 class="card-title">${title}</h5>
-                      <p class="card-text">${description}</p>
-                      <a href="${link}" class="btn btn-primary">Read More</a>
-                  </div>
-              </div>
-          </div>
-      `;
-  }
-  
-  // Function to create Skill Item HTML
-  function createSkillItem(name, icon, projects) {
-      let links = '';
-      if (projects.length > 0) {
-          projects.forEach(project => {
-              const projectLink = `projects.html#${project.toLowerCase().replace(/\s+/g, '-')}`;
-              links += `<a href="${projectLink}" class="d-block">${project}</a>`;
-          });
-      }
-      return `
-          <div class="col-md-3 col-sm-4 col-6 mb-4 text-center">
-              <a href="${projects.length > 0 ? projects.map(project => `projects.html#${project.toLowerCase().replace(/\s+/g, '-')}`).join(' ') : '#'}" class="skill-link" aria-label="${name}">
-                  <img src="${icon}" alt="${name}" class="skill-icon mb-2">
-                  <p>${name}</p>
-              </a>
-              ${links}
-          </div>
-      `;
-  }
-  
-  // Function to create Experience Item HTML
-  function createExperienceItem(role, company, duration, responsibilities, skills) {
-      const responsibilitiesList = responsibilities.map(resp => `<li>${resp}</li>`).join('');
-      const skillsList = skills.length > 0 ? `<p><strong>Skills Used:</strong></p><ul>${skills.map(skill => `<li>${skill}</li>`).join('')}</ul>` : '';
-      return `
-          <div class="card mb-4">
-              <div class="card-body">
-                  <h3 class="card-title">${role} at ${company}</h3>
-                  <h5 class="card-subtitle mb-2 text-muted">${duration}</h5>
-                  <p><strong>Responsibilities:</strong></p>
-                  <ul>
-                      ${responsibilitiesList}
-                  </ul>
-                  ${skillsList}
-              </div>
-          </div>
-      `;
-  }
-  
-  // ==================== Rendering Functions ====================
-  
-  // Function to render Featured Projects
-  function renderFeaturedProjects() {
-      fetch('data/projects.json')
-          .then(response => response.json())
-          .then(data => {
-              const featuredProjectsContainer = document.getElementById('featured-projects-container');
-              // Select top 3 featured projects based on "featured" flag or first 3 if not present
-              const featuredProjects = data.filter(project => project.featured).length > 0 ? data.filter(project => project.featured) : data.slice(0, 3);
-              featuredProjects.forEach(project => {
-                  const projectCard = createProjectCard(project.title, project.image, project.description, project.skills, project.link);
-                  featuredProjectsContainer.insertAdjacentHTML('beforeend', projectCard);
-              });
-          })
-          .catch(error => console.error('Error loading featured projects:', error));
-  }
-  
-  // Function to render Latest Blogs
-  function renderLatestBlogs() {
-      fetch('data/blog.json')
-          .then(response => response.json())
-          .then(data => {
-              const latestBlogsContainer = document.getElementById('latest-blogs-container');
-              // Sort blogs by date if available, else keep as is
-              // Assuming blogs are ordered from latest to oldest
-              const latestBlogs = data.slice(0, 2);
-              latestBlogs.forEach(blog => {
-                  const blogCard = createBlogCard(blog.title, blog.image, blog.description, blog.link);
-                  latestBlogsContainer.insertAdjacentHTML('beforeend', blogCard);
-              });
-          })
-          .catch(error => console.error('Error loading latest blogs:', error));
-  }
-  
-  // Function to render All Blogs (used in blog.html)
-  function renderBlogs() {
-      fetch('data/blog.json')
-          .then(response => response.json())
-          .then(data => {
-              const blogContainer = document.getElementById('blog-container');
-              // Assuming blogs are ordered from latest to oldest
-              data.forEach(blog => {
-                  const blogCard = createBlogCard(blog.title, blog.image, blog.description, blog.link);
-                  blogContainer.insertAdjacentHTML('beforeend', blogCard);
-              });
-          })
-          .catch(error => console.error('Error loading blog posts:', error));
-  }
-  
-  // Function to render Projects
-  function renderProjects() {
-      fetch('data/projects.json')
-          .then(response => response.json())
-          .then(data => {
-              const projectsContainer = document.getElementById('projects-container');
-              data.forEach(project => {
-                  const projectCard = createProjectCard(project.title, project.image, project.description, project.skills, project.link);
-                  projectsContainer.insertAdjacentHTML('beforeend', projectCard);
-              });
-          })
-          .catch(error => console.error('Error loading projects:', error));
-  }
-  
-  // Function to render Skills
-  function renderSkills() {
-      fetch('data/skills.json')
-          .then(response => response.json())
-          .then(data => {
-              const skillsContainer = document.getElementById('skills-container');
-              data.forEach(skill => {
-                  const skillItem = createSkillItem(skill.name, skill.icon, skill.projects);
-                  skillsContainer.insertAdjacentHTML('beforeend', skillItem);
-              });
-          })
-          .catch(error => console.error('Error loading skills:', error));
-  }
-  
-  // Function to render Experience
-  function renderExperience() {
-      fetch('data/experience.json')
-          .then(response => response.json())
-          .then(data => {
-              const experienceContainer = document.getElementById('experience-container');
-              data.forEach(exp => {
-                  const experienceItem = createExperienceItem(exp.role, exp.company, exp.duration, exp.responsibilities, exp.skills);
-                  experienceContainer.insertAdjacentHTML('beforeend', experienceItem);
-              });
-          })
-          .catch(error => console.error('Error loading experience:', error));
-  }
+}
+
+// ==================== Dynamic Content Rendering Functions ====================
+
+// Function to create Project Card HTML
+function createProjectCard(title, image, description, skills, link) {
+    const skillsBadges = skills.map(skill => `<span class="badge badge-primary mr-1">${skill}</span>`).join('');
+    return `
+        <div class="col-md-4 mb-4">
+            <div class="card project-card">
+                <img src="${image}" class="card-img-top" alt="${title}">
+                <div class="card-body">
+                    <h5 class="card-title">${title}</h5>
+                    <p class="card-text">${description}</p>
+                    <div class="skills mb-3">
+                        ${skillsBadges}
+                    </div>
+                    <a href="${link}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Function to create Blog Card HTML
+function createBlogCard(title, image, description, link) {
+    return `
+        <div class="col-md-6 mb-4">
+            <div class="card blog-card">
+                <img src="${image}" class="card-img-top" alt="${title}">
+                <div class="card-body">
+                    <h5 class="card-title">${title}</h5>
+                    <p class="card-text">${description}</p>
+                    <a href="${link}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Function to create Skill Item HTML
+function createSkillItem(name, icon, projects) {
+    let links = '';
+    if (projects.length > 0) {
+        projects.forEach(project => {
+            const projectLink = `projects.html#${project.toLowerCase().replace(/\s+/g, '-')}`;
+            links += `<a href="${projectLink}" class="d-block">${project}</a>`;
+        });
+    }
+    return `
+        <div class="col-md-3 col-sm-4 col-6 mb-4 text-center">
+            <a href="${projects.length > 0 ? projects.map(project => `projects.html#${project.toLowerCase().replace(/\s+/g, '-')}`).join(' ') : '#'}" class="skill-link" aria-label="${name}">
+                <img src="${icon}" alt="${name}" class="skill-icon mb-2">
+                <p>${name}</p>
+            </a>
+            ${links}
+        </div>
+    `;
+}
+
+// Function to create Experience Item HTML
+function createExperienceItem(role, company, duration, responsibilities, skills) {
+    const responsibilitiesList = responsibilities.map(resp => `<li>${resp}</li>`).join('');
+    const skillsList = skills.length > 0 ? `<p><strong>Skills Used:</strong></p><ul>${skills.map(skill => `<li>${skill}</li>`).join('')}</ul>` : '';
+    return `
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">${role} at ${company}</h3>
+                <h5 class="card-subtitle mb-2 text-muted">${duration}</h5>
+                <p><strong>Responsibilities:</strong></p>
+                <ul>
+                    ${responsibilitiesList}
+                </ul>
+                ${skillsList}
+            </div>
+        </div>
+    `;
+}
+
+// ==================== Rendering Functions ====================
+
+// Function to render Featured Projects
+function renderFeaturedProjects() {
+    fetch('data/projects.json')
+        .then(response => response.json())
+        .then(data => {
+            const featuredProjectsContainer = document.getElementById('featured-projects-container');
+            if (!featuredProjectsContainer) return;
+
+            // Select featured projects based on "featured" flag or first 3 if not present
+            const featuredProjects = data.filter(project => project.featured).length > 0 ? data.filter(project => project.featured) : data.slice(0, 3);
+            featuredProjects.forEach(project => {
+                const projectCard = createProjectCard(project.title, project.image, project.description, project.skills, project.link);
+                featuredProjectsContainer.insertAdjacentHTML('beforeend', projectCard);
+            });
+        })
+        .catch(error => console.error('Error loading featured projects:', error));
+}
+
+// Function to render Latest Blogs
+function renderLatestBlogs() {
+    fetch('data/blog.json')
+        .then(response => response.json())
+        .then(data => {
+            const latestBlogsContainer = document.getElementById('latest-blogs-container');
+            if (!latestBlogsContainer) return;
+
+            // Assuming blogs are ordered from latest to oldest
+            const latestBlogs = data.slice(0, 2);
+            latestBlogs.forEach(blog => {
+                const blogCard = createBlogCard(blog.title, blog.image, blog.description, blog.link);
+                latestBlogsContainer.insertAdjacentHTML('beforeend', blogCard);
+            });
+        })
+        .catch(error => console.error('Error loading latest blogs:', error));
+}
+
+// Function to render All Blogs (used in blog.html)
+function renderBlogs() {
+    fetch('data/blog.json')
+        .then(response => response.json())
+        .then(data => {
+            const blogContainer = document.getElementById('blog-container');
+            if (!blogContainer) return;
+
+            // Assuming blogs are ordered from latest to oldest
+            data.forEach(blog => {
+                const blogCard = createBlogCard(blog.title, blog.image, blog.description, blog.link);
+                blogContainer.insertAdjacentHTML('beforeend', blogCard);
+            });
+        })
+        .catch(error => console.error('Error loading blog posts:', error));
+}
+
+// Function to render Projects (used in projects.html)
+function renderProjects() {
+    fetch('data/projects.json')
+        .then(response => response.json())
+        .then(data => {
+            const projectsContainer = document.getElementById('projects-container');
+            if (!projectsContainer) return;
+
+            data.forEach(project => {
+                const projectCard = createProjectCard(project.title, project.image, project.description, project.skills, project.link);
+                projectsContainer.insertAdjacentHTML('beforeend', projectCard);
+            });
+        })
+        .catch(error => console.error('Error loading projects:', error));
+}
+
+// Function to render Skills (used in skills.html)
+function renderSkills() {
+    fetch('data/skills.json')
+        .then(response => response.json())
+        .then(data => {
+            const skillsContainer = document.getElementById('skills-container');
+            if (!skillsContainer) return;
+
+            data.forEach(skill => {
+                const skillItem = createSkillItem(skill.name, skill.icon, skill.projects);
+                skillsContainer.insertAdjacentHTML('beforeend', skillItem);
+            });
+        })
+        .catch(error => console.error('Error loading skills:', error));
+}
+
+// Function to render Experience (used in experience.html or about.html if applicable)
+function renderExperience() {
+    fetch('data/experience.json')
+        .then(response => response.json())
+        .then(data => {
+            const experienceContainer = document.getElementById('experience-container');
+            if (!experienceContainer) return;
+
+            data.forEach(exp => {
+                const experienceItem = createExperienceItem(exp.role, exp.company, exp.duration, exp.responsibilities, exp.skills);
+                experienceContainer.insertAdjacentHTML('beforeend', experienceItem);
+            });
+        })
+        .catch(error => console.error('Error loading experience:', error));
+}
+
+// ==================== Dynamic Detail Page Rendering ====================
+
+// Function to render Blog Detail based on URL parameter
+function renderBlogDetail() {
+    const params = new URLSearchParams(window.location.search);
+    const blogTitle = params.get('title');
+
+    if (!blogTitle) {
+        document.querySelector('.blog-detail-section').innerHTML = '<p>Blog post not found.</p>';
+        return;
+    }
+
+    fetch('data/blog.json')
+        .then(response => response.json())
+        .then(data => {
+            const blog = data.find(b => b.title.toLowerCase().replace(/\s+/g, '-') === blogTitle.toLowerCase().replace(/\s+/g, '-'));
+            if (!blog) {
+                document.querySelector('.blog-detail-section').innerHTML = '<p>Blog post not found.</p>';
+                return;
+            }
+
+            document.getElementById('blog-title').textContent = blog.title;
+            document.getElementById('blog-image').src = blog.image;
+            document.getElementById('blog-image').alt = blog.title;
+            document.getElementById('blog-description').textContent = blog.description;
+            document.getElementById('blog-tags').textContent = blog.tags.join(', ');
+            document.getElementById('blog-content').textContent = blog.content;
+
+            const relatedProjectsContainer = document.getElementById('blog-related-projects');
+            if (relatedProjectsContainer) {
+                relatedProjectsContainer.innerHTML = '';
+                blog.related_projects.forEach(project => {
+                    const projectLink = project.toLowerCase().replace(/\s+/g, '-');
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="projects.html#${projectLink}">${project}</a>`;
+                    relatedProjectsContainer.appendChild(li);
+                });
+            }
+        })
+        .catch(error => console.error('Error loading blog detail:', error));
+}
+
+// Function to render Project Detail based on URL fragment
+function renderProjectDetail() {
+    const hash = window.location.hash.substring(1); // Remove the '#' character
+    if (!hash) {
+        document.querySelector('.project-detail-section').innerHTML = '<p>Project not found.</p>';
+        return;
+    }
+
+    fetch('data/projects.json')
+        .then(response => response.json())
+        .then(data => {
+            const project = data.find(p => p.title.toLowerCase().replace(/\s+/g, '-') === hash.toLowerCase().replace(/\s+/g, '-'));
+            if (!project) {
+                document.querySelector('.project-detail-section').innerHTML = '<p>Project not found.</p>';
+                return;
+            }
+
+            document.getElementById('project-title').textContent = project.title;
+            document.getElementById('project-image').src = project.image;
+            document.getElementById('project-image').alt = project.title;
+            document.getElementById('project-description').textContent = project.description;
+            document.getElementById('project-skills').textContent = project.skills.join(', ');
+            document.getElementById('project-details').textContent = project.details.map(detail => detail.text).join('\n\n');
+
+            const citationsContainer = document.getElementById('project-citations');
+            if (citationsContainer) {
+                citationsContainer.innerHTML = '';
+                project.details.forEach(detail => {
+                    detail.citations.forEach(citation => {
+                        const li = document.createElement('li');
+                        li.textContent = citation;
+                        citationsContainer.appendChild(li);
+                    });
+                });
+            }
+
+            const relatedProjectsContainer = document.getElementById('project-related-projects');
+            if (relatedProjectsContainer) {
+                relatedProjectsContainer.innerHTML = '';
+                project.related_projects.forEach(relProject => {
+                    const relProjectLink = relProject.toLowerCase().replace(/\s+/g, '-');
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="projects.html#${relProjectLink}">${relProject}</a>`;
+                    relatedProjectsContainer.appendChild(li);
+                });
+            }
+        })
+        .catch(error => console.error('Error loading project detail:', error));
+}
+
+// ==================== Initialization Based on Page ====================
+
+// Determine which page is currently loaded and initialize accordingly
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.split('/').pop();
+
+    switch(currentPage) {
+        case 'index.html':
+        case '':
+            // Already handled by initial calls in HTML
+            break;
+        case 'projects.html':
+            renderProjects();
+            break;
+        case 'blog.html':
+            renderBlogs();
+            break;
+        case 'skills.html':
+            renderSkills();
+            break;
+        case 'experience.html':
+            renderExperience();
+            break;
+        case 'blog-detail.html':
+            renderBlogDetail();
+            break;
+        case 'project-detail.html':
+            renderProjectDetail();
+            break;
+        case 'contact.html':
+            // No dynamic content to render
+            break;
+        default:
+            // Handle unknown pages if necessary
+            break;
+    }
+});
