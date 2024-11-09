@@ -1,3 +1,4 @@
+<!-- blog-ai-physics.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,9 @@
 <body>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html">YourLogo</a>
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/images/logo.png" alt="Logo" height="30">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,6 +33,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="skills.html">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="experience.html">Experience</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="projects.html">Projects</a>
@@ -50,17 +59,20 @@
         </div>
     </nav>
 
+    <!-- Particle Background -->
+    <canvas id="background-animation"></canvas>
+
     <!-- Blog Detail Section -->
     <section class="blog-detail-section container my-5">
         <h2>The Intersection of AI and Theoretical Physics</h2>
-        <img src="assets/images/ai-physics.jpeg" alt="The Intersection of AI and Theoretical Physics" class="img-fluid mb-4">
+        <img src="assets/images/ai-physics.png" alt="The Intersection of AI and Theoretical Physics" class="img-fluid mb-4">
         <p><strong>Description:</strong> Exploring how principles from theoretical physics can be applied to enhance AI model structures and efficiency.</p>
         <p><strong>Tags:</strong> AI, Physics, Deep Learning</p>
         <h4>Content</h4>
         <p>During my studies at NISER, I worked on a physics-based model to improve neural network performance using the Schwinger-Dyson formalism. This approach allowed for more robust and efficient AI models by incorporating principles from theoretical physics...</p>
         <h4>Related Projects:</h4>
         <ul>
-            <li><a href="project-ml-credit-ratings.html">Machine Learning and Sovereign Credit Ratings</a></li>
+            <li><a href="projects.html#machine-learning-and-sovereign-credit-ratings">Machine Learning and Sovereign Credit Ratings</a></li>
         </ul>
         <a href="blog.html" class="btn btn-primary mt-3">Back to Blog</a>
     </section>

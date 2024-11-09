@@ -230,15 +230,17 @@ function createExperienceItem(role, company, duration, responsibilities, skills)
     const responsibilitiesList = responsibilities.map(resp => `<li>${resp}</li>`).join('');
     const skillsList = skills.length > 0 ? `<p><strong>Skills Used:</strong></p><ul>${skills.map(skill => `<li>${skill}</li>`).join('')}</ul>` : '';
     return `
-        <div class="card mb-4">
-            <div class="card-body">
-                <h3 class="card-title">${role} at ${company}</h3>
-                <h5 class="card-subtitle mb-2 text-muted">${duration}</h5>
-                <p><strong>Responsibilities:</strong></p>
-                <ul>
-                    ${responsibilitiesList}
-                </ul>
-                ${skillsList}
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">${role} at ${company}</h3>
+                    <h5 class="card-subtitle mb-2 text-muted">${duration}</h5>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        ${responsibilitiesList}
+                    </ul>
+                    ${skillsList}
+                </div>
             </div>
         </div>
     `;
@@ -290,6 +292,9 @@ function renderBlogs() {
             const blogContainer = document.getElementById('blog-container');
             if (!blogContainer) return;
 
+            // Clear existing content to prevent duplication
+            blogContainer.innerHTML = '';
+
             // Assuming blogs are ordered from latest to oldest
             data.forEach(blog => {
                 const blogCard = createBlogCard(blog.title, blog.image, blog.description, blog.link);
@@ -307,6 +312,9 @@ function renderProjects() {
             const projectsContainer = document.getElementById('projects-container');
             if (!projectsContainer) return;
 
+            // Clear existing content to prevent duplication
+            projectsContainer.innerHTML = '';
+
             data.forEach(project => {
                 const projectCard = createProjectCard(project.title, project.image, project.description, project.skills, project.link);
                 projectsContainer.insertAdjacentHTML('beforeend', projectCard);
@@ -323,6 +331,9 @@ function renderSkills() {
             const skillsContainer = document.getElementById('skills-container');
             if (!skillsContainer) return;
 
+            // Clear existing content to prevent duplication
+            skillsContainer.innerHTML = '';
+
             data.forEach(skill => {
                 const skillItem = createSkillItem(skill.name, skill.icon, skill.projects);
                 skillsContainer.insertAdjacentHTML('beforeend', skillItem);
@@ -331,13 +342,16 @@ function renderSkills() {
         .catch(error => console.error('Error loading skills:', error));
 }
 
-// Function to render Experience (used in experience.html or about.html if applicable)
+// Function to render Experience (used in experience.html)
 function renderExperience() {
     fetch('data/experience.json')
         .then(response => response.json())
         .then(data => {
             const experienceContainer = document.getElementById('experience-container');
             if (!experienceContainer) return;
+
+            // Clear existing content to prevent duplication
+            experienceContainer.innerHTML = '';
 
             data.forEach(exp => {
                 const experienceItem = createExperienceItem(exp.role, exp.company, exp.duration, exp.responsibilities, exp.skills);
@@ -441,7 +455,6 @@ function renderProjectDetail() {
 
 // ==================== Initialization Based on Page ====================
 
-// Determine which page is currently loaded and initialize accordingly
 document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname.split('/').pop();
 
