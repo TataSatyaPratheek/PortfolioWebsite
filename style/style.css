@@ -122,6 +122,12 @@ body.bright-mode .tagline {
     animation: fadeIn 2s 7s forwards;
 }
 
+.navbar-logo {
+    height: 10px; /* Adjust the height as needed */
+    width: auto;  /* Maintain aspect ratio */
+}
+
+
 body.bright-mode .summary {
     color: #121212;
 }
