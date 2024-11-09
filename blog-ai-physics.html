@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Projects</title>
-    <meta name="description" content="Explore projects in AI Tutor Development, Smart Helmet Prototype, and Machine Learning for Sovereign Credit Ratings.">
-    <meta name="keywords" content="Projects, AI, Machine Learning, Data Science, Portfolio">
+    <title>Portfolio - The Intersection of AI and Theoretical Physics</title>
+    <meta name="description" content="Detailed insights into the intersection of AI and theoretical physics.">
+    <meta name="keywords" content="AI, Theoretical Physics, Deep Learning, Portfolio">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Portfolio - Projects">
-    <meta property="og:description" content="Explore projects in AI Tutor Development, Smart Helmet Prototype, and Machine Learning for Sovereign Credit Ratings.">
-    <meta property="og:image" content="assets/images/projects-og.png">
-    <meta property="og:url" content="https://yourusername.github.io/PortfolioWebsite/projects.html">
+    <meta property="og:title" content="Portfolio - The Intersection of AI and Theoretical Physics">
+    <meta property="og:description" content="Detailed insights into the intersection of AI and theoretical physics.">
+    <meta property="og:image" content="assets/images/ai-physics.png">
+    <meta property="og:url" content="https://yourusername.github.io/PortfolioWebsite/blog-ai-physics.html">
 </head>
 <body>
     <!-- Header -->
@@ -31,10 +31,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="projects.html">Projects</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="blog.html">Blog</a>
                 </li>
                 <li class="nav-item">
@@ -50,12 +50,19 @@
         </div>
     </nav>
 
-    <!-- Projects Section -->
-    <section class="projects-section container my-5">
-        <h2>Projects</h2>
-        <div id="projects-container" class="row">
-            <!-- Project cards will be injected here by JavaScript -->
-        </div>
+    <!-- Blog Detail Section -->
+    <section class="blog-detail-section container my-5">
+        <h2>The Intersection of AI and Theoretical Physics</h2>
+        <img src="assets/images/ai-physics.png" alt="The Intersection of AI and Theoretical Physics" class="img-fluid mb-4">
+        <p><strong>Description:</strong> Exploring how principles from theoretical physics can be applied to enhance AI model structures and efficiency.</p>
+        <p><strong>Tags:</strong> AI, Physics, Deep Learning</p>
+        <h4>Content</h4>
+        <p>During my studies at NISER, I worked on a physics-based model to improve neural network performance using the Schwinger-Dyson formalism. This approach allowed for more robust and efficient AI models by incorporating principles from theoretical physics. By integrating these advanced mathematical frameworks, the AI models became better at handling complex data structures and exhibited improved generalization capabilities...</p>
+        <h4>Related Projects:</h4>
+        <ul>
+            <li><a href="project-ml-credit-ratings.html">Machine Learning and Sovereign Credit Ratings</a></li>
+        </ul>
+        <a href="blog.html" class="btn btn-primary mt-3">Back to Blog</a>
     </section>
 
     <!-- Footer -->
@@ -71,32 +78,5 @@
             integrity="sha384-LtrjvnR4GeARYZrO3UySgLhdXnfxHP+3lD3VbLhK6lO+n4I6Y5ZC8qbiusOhBo0s" 
             crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script>
-        // Fetch and display projects
-        fetch('data/projects.json')
-            .then(response => response.json())
-            .then(data => {
-                const projectsContainer = document.getElementById('projects-container');
-                data.forEach(project => {
-                    const projectCard = `
-                        <div class="col-md-4 mb-4">
-                            <div class="card project-card">
-                                <img src="${project.image}" class="card-img-top" alt="${project.title}">
-                                <div class="card-body">
-                                    <h5 class="card-title">${project.title}</h5>
-                                    <p class="card-text">${project.description}</p>
-                                    <div class="skills mb-3">
-                                        ${project.skills.map(skill => `<span class="badge badge-primary mr-1">${skill}</span>`).join('')}
-                                    </div>
-                                    <a href="${project.link}" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    projectsContainer.insertAdjacentHTML('beforeend', projectCard);
-                });
-            })
-            .catch(error => console.error('Error loading projects:', error));
-    </script>
 </body>
 </html>

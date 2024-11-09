@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Python",
+        "icon": "assets/icons/python.svg",
+        "projects": ["Skillbanc AI Tutor", "Machine Learning and Sovereign Credit Ratings"]
+    },
+    {
+        "name": "SQL",
+        "icon": "assets/icons/sql.svg",
+        "projects": ["Skillbanc AI Tutor"]
+    },
+    {
+        "name": "Azure",
+        "icon": "assets/icons/azure.svg",
+        "projects": []
+    },
+    {
+        "name": "XGBoost",
+        "icon": "assets/icons/xgboost.svg",
+        "projects": ["Skillbanc AI Tutor"]
+    },
+    {
+        "name": "PowerBI",
+        "icon": "assets/icons/powerbi.svg",
+        "projects": ["Skillbanc AI Tutor"]
+    },
+    {
+        "name": "Flutter",
+        "icon": "assets/icons/flutter.svg",
+        "projects": ["Skillbanc AI Tutor"]
+    },
+    {
+        "name": "Sensor Integration",
+        "icon": "assets/icons/sensor.svg",
+        "projects": ["Smart Helmet Prototype"]
+    },
+    {
+        "name": "BLE Data Transmission",
+        "icon": "assets/icons/ble.svg",
+        "projects": ["Smart Helmet Prototype"]
+    },
+    {
+        "name": "Financial Modeling",
+        "icon": "assets/icons/financial-modeling.svg",
+        "projects": ["Machine Learning and Sovereign Credit Ratings"]
+    },
+    {
+        "name": "Statistical Analysis",
+        "icon": "assets/icons/statistical-analysis.svg",
+        "projects": ["Machine Learning and Sovereign Credit Ratings"]
+    }
+]

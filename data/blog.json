@@ -1,0 +1,20 @@
+[
+    {
+        "title": "The Intersection of AI and Theoretical Physics",
+        "description": "Exploring how principles from theoretical physics can be applied to enhance AI model structures and efficiency.",
+        "image": "assets/images/ai-physics.png",
+        "link": "blog-ai-physics.html",
+        "tags": ["AI", "Physics", "Deep Learning"],
+        "content": "During my studies at NISER, I worked on a physics-based model to improve neural network performance using the Schwinger-Dyson formalism. This approach allowed for more robust and efficient AI models by incorporating principles from theoretical physics...",
+        "related_projects": ["Machine Learning and Sovereign Credit Ratings"]
+    },
+    {
+        "title": "The Power of Adaptive Learning Systems",
+        "description": "Insights from developing the Skillbanc AI Tutor and how adaptive learning models shape personalized education.",
+        "image": "assets/images/adaptive-learning.png",
+        "link": "blog-adaptive-learning.html",
+        "tags": ["Education", "Machine Learning", "Adaptive Systems"],
+        "content": "In my role at Skillbanc, I developed an AI-driven tutor system that customizes learning experiences based on user data, improving retention and engagement. By analyzing user interactions and performance metrics, the system provides personalized recommendations and feedback...",
+        "related_projects": ["Skillbanc AI Tutor"]
+    }
+]

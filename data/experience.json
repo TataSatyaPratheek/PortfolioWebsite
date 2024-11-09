@@ -1,0 +1,30 @@
+[
+    {
+        "company": "Skillbanc.com",
+        "role": "Software Engineering and Data Science Intern",
+        "duration": "Aug 2024 – Present",
+        "responsibilities": [
+            "AI Tutor Development",
+            "Predictive Models",
+            "Smart Helmet Prototype"
+        ],
+        "skills": ["Python", "XGBoost", "SQL", "PowerBI"]
+    },
+    {
+        "company": "EDHEC Cracow Learning Expedition",
+        "role": "Technology Strategy Track",
+        "duration": "April 2024",
+        "responsibilities": [
+            "Workshops on Lean Strategy",
+            "Strategic Software Development"
+        ],
+        "skills": []
+    },
+    {
+        "company": "NISER",
+        "role": "Student Researcher - Deep Learning",
+        "duration": "Aug 2021 - May 2023",
+        "responsibilities": [],
+        "skills": ["Theoretical Physics", "Schwinger-Dyson Formalism", "MLP Networks"]
+    }
+]

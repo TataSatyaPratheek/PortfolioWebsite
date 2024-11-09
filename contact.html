@@ -13,7 +13,7 @@
     <meta property="og:title" content="Portfolio - Contact">
     <meta property="og:description" content="Get in touch with a Data Science and Mathematics graduate for collaborations, opportunities, and inquiries.">
     <meta property="og:image" content="assets/images/contact-og.png">
-    <meta property="og:url" content="https://tatasatyapratheek.github.io/PortfolioWebsite/contact.html">
+    <meta property="og:url" content="https://yourusername.github.io/PortfolioWebsite/contact.html">
 </head>
 <body>
     <!-- Header -->
@@ -24,7 +24,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
@@ -40,6 +40,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
+                <!-- Dark/Light Mode Toggle -->
+                <li class="nav-item">
+                    <button id="theme-toggle" class="btn btn-outline-light ml-3" aria-label="Toggle Theme">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -47,18 +53,18 @@
     <!-- Contact Form -->
     <section class="contact-section container my-5">
         <h2>Contact Me</h2>
-        <form id="contactForm" class="mt-4">
+        <form id="contactForm" class="mt-4" action="https://formspree.io/f/your-form-id" method="POST">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control hacker-font" id="name" placeholder="Satya Pratheek TATA" required>
+                <input type="text" class="form-control hacker-font" id="name" name="name" placeholder="Your Name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control hacker-font" id="email" placeholder="satyapratheek.tata@edhec.com" required>
+                <input type="email" class="form-control hacker-font" id="email" name="_replyto" placeholder="your.email@example.com" required>
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control hacker-font" id="message" rows="5" placeholder="Hi! Feel free to collab!" required></textarea>
+                <textarea class="form-control hacker-font" id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
             </div>
             <!-- Google reCAPTCHA v2 -->
             <div class="form-group">
@@ -70,20 +76,20 @@
 
     <!-- Social Links -->
     <section class="social-links-section container my-5 text-center">
-        <a href="https://linkedin.com/in/satyapratheek-tata" target="_blank">
+        <a href="https://linkedin.com/in/satyapratheek-tata" target="_blank" aria-label="LinkedIn">
             <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
         </a>
-        <a href="mailto:satyapratheek.tata@edhec.com">
+        <a href="mailto:satyapratheek.tata@edhec.com" aria-label="Email">
             <img src="assets/icons/gmail.svg" alt="Email" class="social-icon">
         </a>
-        <a href="https://github.com/tatasatyapratheek" target="_blank">
+        <a href="https://github.com/TataSatyaPratheek" target="_blank" aria-label="GitHub">
             <img src="assets/icons/github.svg" alt="GitHub" class="social-icon">
         </a>
     </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-center text-white py-4">
-        &copy; 2024 Your Name. All Rights Reserved.
+        &copy; 2024 Satya Pratheek TATA. All Rights Reserved.
     </footer>
 
     <!-- Scripts -->
@@ -94,15 +100,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-LtrjvnR4GeARYZrO3UySgLhdXnfxHP+3lD3VbLhK6lO+n4I6Y5ZC8qbiusOhBo0s" 
             crossorigin="anonymous"></script>
+    <script src="script.js"></script>
     <script>
-        // Example JavaScript for handling form submission
+        // Handle form submission with Formspree
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Implement form submission logic here (e.g., using Formspree or another service)
-            alert('Thank you for your message!');
-            this.reset();
+            // Check if reCAPTCHA is completed
+            if (grecaptcha.getResponse() === "") {
+                event.preventDefault();
+                alert('Please complete the reCAPTCHA.');
+            }
         });
     </script>
-    <script src="script.js"></script>
 </body>
 </html>

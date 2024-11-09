@@ -24,7 +24,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
@@ -40,43 +40,27 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
+                <!-- Dark/Light Mode Toggle -->
+                <li class="nav-item">
+                    <button id="theme-toggle" class="btn btn-outline-light ml-3" aria-label="Toggle Theme">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Blog Posts Grid -->
+    <!-- Blog Section -->
     <section class="blog-section container my-5">
         <h2>Blog</h2>
-        <div class="row">
-            <!-- Blog Post 1 -->
-            <div class="col-md-6 mb-4">
-                <div class="card blog-card">
-                    <img src="assets/images/ai-physics.png" class="card-img-top" alt="The Intersection of AI and Theoretical Physics">
-                    <div class="card-body">
-                        <h5 class="card-title">The Intersection of AI and Theoretical Physics</h5>
-                        <p class="card-text">Exploring how theoretical physics principles can enhance AI models and deep learning architectures.</p>
-                        <a href="blog-post1.html" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Blog Post 2 -->
-            <div class="col-md-6 mb-4">
-                <div class="card blog-card">
-                    <img src="assets/images/adaptive-learning.png" class="card-img-top" alt="The Power of Adaptive Learning Systems">
-                    <div class="card-body">
-                        <h5 class="card-title">The Power of Adaptive Learning Systems</h5>
-                        <p class="card-text">Insights from developing the Skillbanc AI Tutor project and its impact on personalized education.</p>
-                        <a href="blog-post2.html" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more blog posts as needed -->
+        <div id="blog-container" class="row">
+            <!-- Blog posts will be injected here by JavaScript -->
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-center text-white py-4">
-        &copy; 2024 Your Name. All Rights Reserved.
+        &copy; 2024 Satya Pratheek TATA. All Rights Reserved.
     </footer>
 
     <!-- Scripts -->
@@ -87,5 +71,29 @@
             integrity="sha384-LtrjvnR4GeARYZrO3UySgLhdXnfxHP+3lD3VbLhK6lO+n4I6Y5ZC8qbiusOhBo0s" 
             crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script>
+        // Fetch and display blog posts
+        fetch('data/blog.json')
+            .then(response => response.json())
+            .then(data => {
+                const blogContainer = document.getElementById('blog-container');
+                data.forEach(blog => {
+                    const blogCard = `
+                        <div class="col-md-6 mb-4">
+                            <div class="card blog-card">
+                                <img src="${blog.image}" class="card-img-top" alt="${blog.title}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${blog.title}</h5>
+                                    <p class="card-text">${blog.description}</p>
+                                    <a href="${blog.link}" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    blogContainer.insertAdjacentHTML('beforeend', blogCard);
+                });
+            })
+            .catch(error => console.error('Error loading blog posts:', error));
+    </script>
 </body>
 </html>

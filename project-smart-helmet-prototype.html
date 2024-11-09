@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Projects</title>
-    <meta name="description" content="Explore projects in AI Tutor Development, Smart Helmet Prototype, and Machine Learning for Sovereign Credit Ratings.">
-    <meta name="keywords" content="Projects, AI, Machine Learning, Data Science, Portfolio">
+    <title>Portfolio - Smart Helmet Prototype</title>
+    <meta name="description" content="Detailed information about the Smart Helmet Prototype project.">
+    <meta name="keywords" content="Smart Helmet Prototype, Sensor Integration, BLE Data Transmission, Data Visualization, Portfolio">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Portfolio - Projects">
-    <meta property="og:description" content="Explore projects in AI Tutor Development, Smart Helmet Prototype, and Machine Learning for Sovereign Credit Ratings.">
-    <meta property="og:image" content="assets/images/projects-og.png">
-    <meta property="og:url" content="https://yourusername.github.io/PortfolioWebsite/projects.html">
+    <meta property="og:title" content="Portfolio - Smart Helmet Prototype">
+    <meta property="og:description" content="Detailed information about the Smart Helmet Prototype project.">
+    <meta property="og:image" content="assets/images/smart-helmet.png">
+    <meta property="og:url" content="https://yourusername.github.io/PortfolioWebsite/project-smart-helmet-prototype.html">
 </head>
 <body>
     <!-- Header -->
@@ -50,12 +50,23 @@
         </div>
     </nav>
 
-    <!-- Projects Section -->
-    <section class="projects-section container my-5">
-        <h2>Projects</h2>
-        <div id="projects-container" class="row">
-            <!-- Project cards will be injected here by JavaScript -->
-        </div>
+    <!-- Project Detail Section -->
+    <section class="project-detail-section container my-5">
+        <h2>Smart Helmet Prototype</h2>
+        <img src="assets/images/smart-helmet.png" alt="Smart Helmet Prototype" class="img-fluid mb-4">
+        <p><strong>Description:</strong> Developed a wearable device to monitor and visualize athletic performance, specifically focusing on boxing punch analysis.</p>
+        <p><strong>Skills:</strong> Sensor Integration, BLE Data Transmission, Data Visualization</p>
+        <h4>Project Details</h4>
+        <p>By integrating advanced sensors and BLE (Bluetooth Low Energy) technology, the Smart Helmet Prototype was able to capture real-time data on punch force and location. This data was then visualized to provide athletes with actionable insights to improve their performance and ensure safety during training sessions.</p>
+        <h4>Citations:</h4>
+        <ul>
+            <li>Skillbanc.com Internship</li>
+        </ul>
+        <h4>Related Projects:</h4>
+        <ul>
+            <li><a href="project-skillbanc-ai-tutor.html">Skillbanc AI Tutor</a></li>
+        </ul>
+        <a href="projects.html" class="btn btn-primary mt-3">Back to Projects</a>
     </section>
 
     <!-- Footer -->
@@ -71,32 +82,5 @@
             integrity="sha384-LtrjvnR4GeARYZrO3UySgLhdXnfxHP+3lD3VbLhK6lO+n4I6Y5ZC8qbiusOhBo0s" 
             crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script>
-        // Fetch and display projects
-        fetch('data/projects.json')
-            .then(response => response.json())
-            .then(data => {
-                const projectsContainer = document.getElementById('projects-container');
-                data.forEach(project => {
-                    const projectCard = `
-                        <div class="col-md-4 mb-4">
-                            <div class="card project-card">
-                                <img src="${project.image}" class="card-img-top" alt="${project.title}">
-                                <div class="card-body">
-                                    <h5 class="card-title">${project.title}</h5>
-                                    <p class="card-text">${project.description}</p>
-                                    <div class="skills mb-3">
-                                        ${project.skills.map(skill => `<span class="badge badge-primary mr-1">${skill}</span>`).join('')}
-                                    </div>
-                                    <a href="${project.link}" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    projectsContainer.insertAdjacentHTML('beforeend', projectCard);
-                });
-            })
-            .catch(error => console.error('Error loading projects:', error));
-    </script>
 </body>
 </html>

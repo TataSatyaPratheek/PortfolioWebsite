@@ -1,23 +1,41 @@
 [
     {
         "title": "Skillbanc AI Tutor",
-        "description": "Adaptive learning pipeline for students, personalized recommendations, and feedback system.",
+        "description": "An adaptive learning pipeline for students with personalized recommendations and real-time feedback, leveraging machine learning to optimize learning paths.",
         "image": "assets/images/ai-tutor.png",
         "skills": ["Python", "AI Model Development", "Flutter"],
-        "link": "projects.html#skillbanc-ai-tutor"
+        "link": "project-skillbanc-ai-tutor.html",
+        "details": [
+            {
+                "text": "Built on Python and Flutter, this project enhanced student retention and learning outcomes through adaptive learning strategies.",
+                "citations": ["Skillbanc.com Internship", "User Behavior Analysis"]
+            }
+        ]
     },
     {
         "title": "Smart Helmet Prototype",
-        "description": "Developed a wearable to analyze punch force and location for boxing performance.",
+        "description": "Developed a wearable device to monitor and visualize athletic performance, specifically focusing on boxing punch analysis.",
         "image": "assets/images/smart-helmet.png",
-        "skills": ["Sensor Integration", "BLE Data Transmission"],
-        "link": "projects.html#smart-helmet-prototype"
+        "skills": ["Sensor Integration", "BLE Data Transmission", "Data Visualization"],
+        "link": "project-smart-helmet-prototype.html",
+        "details": [
+            {
+                "text": "Sensor integration and BLE were leveraged for real-time metrics, providing enhanced safety data during training.",
+                "citations": ["Skillbanc.com Internship"]
+            }
+        ]
     },
     {
-        "title": "ML & Sovereign Credit Ratings",
-        "description": "Developed predictive models for forecasting credit ratings.",
+        "title": "Machine Learning and Sovereign Credit Ratings",
+        "description": "Using machine learning models to forecast credit ratings, integrating economic and political factors to influence financial decisions.",
         "image": "assets/images/credit-ratings.png",
         "skills": ["Financial Modeling", "AI", "Statistical Analysis"],
-        "link": "projects.html#ml-sovereign-credit-ratings"
+        "link": "project-ml-credit-ratings.html",
+        "details": [
+            {
+                "text": "Enhanced global credit rating predictions by integrating long-term financial data.",
+                "citations": ["EDHEC MSc Thesis"]
+            }
+        ]
     }
 ]
